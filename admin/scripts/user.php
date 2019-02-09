@@ -16,10 +16,10 @@
 		);
 
 		if($create_user_set->rowCount()){
-			redirect_to('index.php');
+			redirect_to('success.php');
 		}else{
 			$message = 'Your hiring practices have failed you.. this individual sucks...';
 			return $message;
 		}
-
-}
+	}
+	

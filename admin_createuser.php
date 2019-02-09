@@ -1,6 +1,5 @@
 <?php 
 	require_once('admin/scripts/config.php');
-
 	confirm_logged_in();
 
 	if(isset($_POST['submit'])){
@@ -33,6 +32,7 @@
 	<?php if(!empty($message)):?>
 		<p><?php echo $message;?></p>
 	<?php endif;?>
+
 	<h2>Create User</h2>
 	<form action="admin_createuser.php" method="post">
 		<label for="first-name">First Name:</label>
@@ -45,8 +45,9 @@
 		<input type="email" id="email" name="email" value=""><br><br>
 
 		<label for="password">Password:</label>
-		<input type="text" id="password" name="password" value=""><br><br>
-
+		<input type="password" readonly name="password" class="input" value="<?php echo "\n".createRandomPassword()."\n"; ?>"><br><br>
+		<!--Password is locked, and now generates a random password-->
+		
 		<button type="submit" name="submit">Create User</button>
 	</form>
 
