@@ -11,15 +11,16 @@
 		$email = trim($_POST['email']);
 
 
-		//Validation?
+		//Validation
 		if(empty($username) || empty($password) || empty($email)){
 			$message = 'Please fill the required fields';
 		}else{
 			$result = createUser($fname,$username,$password,$email);
-			
 			$message = $result;
+			$sendEmail = send_email($username, $password, $email);
 		}
 	}
+	
 ?>
 
 <!doctype html>
