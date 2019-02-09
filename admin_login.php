@@ -1,5 +1,5 @@
 <?php 
-	require_once('scripts/config.php');
+	require_once('admin/scripts/config.php');
 	if(empty($_POST['username']) || empty($_POST['password'])){
 		$message = 'Missing Fields';
 	}else{
